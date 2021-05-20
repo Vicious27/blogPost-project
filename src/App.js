@@ -1,13 +1,14 @@
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
 
-function App() {
+const App = (props) => {
+
   return (
-    <div className="blog-post-project">
-      <header className="App-header">
-        <h1>Start Project</h1>
-      </header>
+    <div className="App">
+      <Header />
     </div>
   );
-}
+};
 
 export default App;
