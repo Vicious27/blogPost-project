@@ -12,7 +12,7 @@ const App = (props) => {
     },
     {
       id: 2,
-      title: "Hellow Project",
+      title: "Hello Project",
       content: "tothe.",
     },
     {
@@ -25,6 +25,7 @@ const App = (props) => {
   return (
     <div className="App">
       <Header />
+      <Posts posts={posts} />
     </div>
   );
 };
