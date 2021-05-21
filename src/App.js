@@ -27,10 +27,18 @@ const App = (props) => {
   ]);
 
   return (
-    <div className="App">
-      <Header />
-      <Posts posts={posts} />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Posts posts={posts} />}
+          />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
