@@ -8,8 +8,22 @@ const PostForm = (props) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  const handlePostForm = (event) => {
+    event.preventDefault();
+    if (title) {
+      const post = {
+        title: title,
+        content: content,
+      };
+      console.log(post);
+    } else {
+      alert("Oops! You forgot a title!");
+    };
+  };
+
   return (
-    <form className="container">
+    <form className="container"
+      onSubmit={handlePostForm}>
       <h1>Add a New Post</h1>
       <p>
         <label htmlFor="form-title">Title:</label>
@@ -28,7 +42,6 @@ const PostForm = (props) => {
           }}
         />
       </p>
-      {/* {_ Quill Editor Here _} */}
       <p>
         <button type="submit">Save</button>
       </p>
