@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Header from "./components/Header";
 import Posts from "./components/Posts";
 import Post from "./components/Post";
+import PostForm from "./components/PostForm";
 import NotFound from "./components/NotFound";
 import "./App.css";
 
@@ -46,6 +47,11 @@ const App = (props) => {
               if (post) return <Post post={post} />;
               else return <NotFound />;
             }} />
+          <Route
+            exact
+            path="/new"
+            component={PostForm}
+          />
           <Route component={NotFound} />
         </Switch>
       </div>
