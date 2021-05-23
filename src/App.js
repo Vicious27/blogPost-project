@@ -29,6 +29,14 @@ const App = (props) => {
     }
   ]);
 
+  const addNewPost = (post) => {
+    post.id = posts.length + 1;
+    post.slug = encodeURIComponent(
+      post.title.toLowerCase().split(" ").join("-")
+    );
+    setPosts([...posts, post]);
+  }
+
   return (
     <Router>
       <div className="App">
@@ -50,7 +58,7 @@ const App = (props) => {
           <Route
             exact
             path="/new"
-            component={PostForm}
+            render={() => (<PostForm addNewPost={addNewPost} />)}
           />
           <Route component={NotFound} />
         </Switch>
