@@ -15,3 +15,5 @@ const Message = ({ type }) => {
     </div>
   );
 };
+
+export default Message;
