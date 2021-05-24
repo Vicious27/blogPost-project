@@ -6,7 +6,7 @@ const NotFound = () => (
     <h1>404!</h1>
     <p>
       Looks like you got lost..
-      <Link to="/">Return to posts!</Link>
+      <Link to="/"> Here's a ride back!</Link>
     </p>
   </article>
 );
