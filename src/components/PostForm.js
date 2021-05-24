@@ -35,7 +35,6 @@ const PostForm = ({ addNewPost }) => {
         <br />
         <input
           id="form-title"
-          placeHolder="Session log"
           value={title}
           onChange={event => setTitle(event.target.value)}
         />

@@ -8,26 +8,7 @@ import NotFound from "./components/NotFound";
 import "./App.css";
 
 const App = (props) => {
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      slug: "Hello React",
-      title: "Hello React",
-      content: "lorem.",
-    },
-    {
-      id: 2,
-      slug: "Hello Project",
-      title: "Hello Project",
-      content: "tothe.",
-    },
-    {
-      id: 3,
-      slug: "Hello Blog",
-      title: "Hello Blog",
-      content: "Ipsum.",
-    }
-  ]);
+  const [posts, setPosts] = useState([]);
 
   const addNewPost = (post) => {
     post.id = posts.length + 1;
