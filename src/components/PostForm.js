@@ -29,12 +29,13 @@ const PostForm = ({ addNewPost }) => {
   return (
     <form className="container"
       onSubmit={handlePostForm}>
-      <h1>Add a New Post</h1>
+      <h1>Log-Sesh</h1>
       <p>
         <label htmlFor="form-title">Title:</label>
         <br />
         <input
           id="form-title"
+          placeHolder="Session log"
           value={title}
           onChange={event => setTitle(event.target.value)}
         />

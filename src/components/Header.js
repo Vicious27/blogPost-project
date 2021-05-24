@@ -8,7 +8,7 @@ const Header = (props) => {
     <header className="App-header">
       <ul className="container">
         <li key="home">
-          <Link to="/">Site Title</Link>
+          <Link to="/">Skate-Sesh</Link>
         </li>
         <li>
           <Link to="/new">New Post</Link>
