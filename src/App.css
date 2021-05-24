@@ -34,6 +34,7 @@
   .App-header a {
     color:#fff;
     font-weight: normal;
+    text-decoration: none;
   }
   .App-header ul {    
     padding: 0;
@@ -130,4 +131,8 @@
 
   .App button.linkLike:hover {
      cursor: pointer;
+  }
+
+  .App article.post-container, a {
+    text-decoration: none;
   }
