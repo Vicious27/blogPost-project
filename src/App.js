@@ -5,10 +5,19 @@ import Posts from "./components/Posts";
 import Post from "./components/Post";
 import PostForm from "./components/PostForm";
 import NotFound from "./components/NotFound";
+import Message from "./components/Message";
 import "./App.css";
 
 const App = (props) => {
   const [posts, setPosts] = useState([]);
+  const [message, setMessage] = useState(null);
+
+  const setFlashMessage = (message) => {
+    setMessage(message)
+    setTimeout(() => {
+      setMessage(null);
+    }, 1600);
+  };
 
   const addNewPost = (post) => {
     post.id = posts.length + 1;
@@ -16,12 +25,14 @@ const App = (props) => {
       post.title.toLowerCase().split(" ").join("-")
     );
     setPosts([...posts, post]);
-  }
+    setFlashMessage(`saved`);
+  };
 
   return (
     <Router>
       <div className="App">
         <Header />
+        {message && <Message type={message} />}
         <Switch>
           <Route
             exact
