@@ -4,9 +4,10 @@ import Quill from "react-quill";
 
 import 'react-quill/dist/quill.snow.css';
 
-const PostForm = (props) => {
+const PostForm = ({ addNewPost }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [saved, setSaved] = useState(false);
 
   const handlePostForm = (event) => {
     event.preventDefault();
@@ -15,12 +16,16 @@ const PostForm = (props) => {
         title: title,
         content: content,
       };
-      console.log(post);
+      addNewPost(post);
+      setSaved(true);
     } else {
       alert("Oops! You forgot a title!");
     };
   };
 
+  if (saved === true) {
+    return <Redirect to="/" />;
+  }
   return (
     <form className="container"
       onSubmit={handlePostForm}>
