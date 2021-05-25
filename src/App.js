@@ -22,7 +22,7 @@ const App = (props) => {
   const getNewSlugFromTitle = (title) =>
     encodeURIComponent(title.toLowerCase().split(" ").join("-"));
 
-
+  // CRUD functions
   const addNewPost = (post) => {
     post.id = posts.length + 1;
     post.slug = getNewSlugFromTitle(post.title);
@@ -38,6 +38,15 @@ const App = (props) => {
     setPosts(updatedPosts);
     setFlashMessage(`updated`);
   }
+
+  const deletePost = (posts) => {
+    if (window.confirm("Delete this post?")) {
+      const updatedPosts = posts.filter((p) => p.id !== p.id);
+      setPosts(updatedPosts);
+      setFlashMessage(`deleted`);
+    }
+  };
+
 
   return (
     <Router>
