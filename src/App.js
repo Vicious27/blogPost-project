@@ -39,9 +39,9 @@ const App = (props) => {
     setFlashMessage(`updated`);
   }
 
-  const deletePost = (posts) => {
+  const deletePost = (post) => {
     if (window.confirm("Delete this post?")) {
-      const updatedPosts = posts.filter((p) => p.id !== p.id);
+      const updatedPosts = posts.filter((p) => p.id !== post.id);
       setPosts(updatedPosts);
       setFlashMessage(`deleted`);
     }
