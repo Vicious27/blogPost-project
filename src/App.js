@@ -57,7 +57,8 @@ const App = (props) => {
           <Route
             exact
             path="/"
-            render={() => <Posts posts={posts} />}
+            render={() => <Posts posts={posts}
+              deletePost={deletePost} />}
           />
           <Route
             path="/post/:postSlug"
