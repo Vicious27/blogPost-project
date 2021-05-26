@@ -1,6 +1,7 @@
 
  * {
    box-sizing: border-box;
+   margin: 0;
  }
  
  .App a {
@@ -21,13 +22,13 @@
 
   .App .container {
     max-width: 800px;
-    margin: 0 auto;    
+    margin: 0 auto;   
   }
 
 .App-header {
   background-color: #353944;
   color: #fff;
-  font-size: calc(10px + 1vmin);
+  font-size: calc(14px + 1vmin);
   padding: 1rem;
 }
 
@@ -52,7 +53,7 @@
   }
 
 .App article {
-  padding: 1rem;  
+  padding: 2rem;;
 }
 
   .App article ul {
@@ -60,8 +61,15 @@
     padding: 0;  
   }
 
+  .App article.posts-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+/* changes the uls under post */
   .App article ul li {
     list-style: none;
+    padding: .8rem;
   }
 
   .App article h3 {
