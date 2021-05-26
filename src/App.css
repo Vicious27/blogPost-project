@@ -2,6 +2,7 @@
  * {
    box-sizing: border-box;
    margin: 0;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
  
  .App a {
@@ -28,6 +29,7 @@
   /*targets App-header*/
   .App .App-header {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background: rgba(20, 16, 16, 0.925);
   }
 
 .App-header {
@@ -110,15 +112,16 @@
     background: #FF3F69;
   }
 
-
+/* changes the entire editing form*/
  .App form {
-  padding: 1rem;
+  padding: 2rem;
+  background: rgb(159, 164, 172);
 }
 
   .App form input {
     border: 1px solid #ccc;
     padding: .3rem;
-  }  
+  }
 
   .App form label {
     display: block;
@@ -140,6 +143,7 @@
     background: white;
     font-size: 1rem;
     padding: .5rem 1rem;
+    margin-top: .2rem;
   }
   .App form button[type="submit"]:hover {
     cursor: pointer;

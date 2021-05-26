@@ -47,7 +47,6 @@ const PostForm = ({ post: propsPost, addNewPost, updatePost }) => {
       <h1>Log-Sesh</h1>
       <p>
         <label htmlFor="form-title">Title:</label>
-        <br />
         <input
           defaultValue={post.title}
           id="form-title"
