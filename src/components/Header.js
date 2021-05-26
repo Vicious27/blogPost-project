@@ -11,7 +11,7 @@ const Header = (props) => {
           <Link to="/">Skate-Sesh</Link>
         </li>
         <li>
-          <Link to="/new">New Post</Link>
+          <Link to="/new">Create Post</Link>
         </li>
       </ul>
     </header>
