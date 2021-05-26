@@ -10,7 +10,7 @@ const Post = ({ post }) => {
   const contentHtml = converter.convert();
 
   return (
-    <article className="post container">
+    <article className="post-container">
       <h1>{post.title}</h1>
       <div
         className="content"

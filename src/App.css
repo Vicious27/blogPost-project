@@ -71,6 +71,11 @@
     list-style: none;
     padding: .8rem;
   }
+  
+/* styles the delete and edit button */
+  #crud-buttons {
+    margin-top: .5rem ;
+  }
 
   .App article h3 {
     font-size: calc(14px + 2vmin);

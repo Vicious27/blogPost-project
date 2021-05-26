@@ -16,9 +16,11 @@ const Posts = ({ posts, deletePost }) => (
             </Link>
           </h2>
           <p>
-            <Link to={`/edit/${post.slug}`}>Edit</Link>
+            <Link to={`/edit/${post.slug}`
+            } id="crud-buttons"
+            >Edit</Link>
             {" | "}
-            <button className="linkLike"
+            <button className="linkLike" id="crud-buttons"
               onClick={() => deletePost(post)}>
               Delete
             </button>
