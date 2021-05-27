@@ -76,7 +76,7 @@ const App = (props) => {
           />
           <Route
             exact
-            path="/Login"
+            path="/login"
             component={Login}
           />
           <Route
