@@ -74,6 +74,12 @@
     flex-direction: column;
     background: #2b152cee;
   }
+/* change single post view container*/
+  .App article.post-container {
+    display: flex;
+    flex-direction: column;
+    background: #542a57ee;
+  }
 
 /* changes the uls under post */
   .App article ul li {
@@ -95,8 +101,13 @@
     font-size: calc(14px + 2vmin);
   }
 
+/* changes content toolbar in create post*/
+  .App div.ql-toolbar.ql-snow{
+    background: rgba(0, 0, 0, 0.932);
+  }
+
 .App-link {
-  color: #61dafb;
+  color: #4cb6d3;
 }
 
 .App-message { 
