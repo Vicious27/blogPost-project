@@ -8,7 +8,11 @@ import PostForm from "./components/PostForm";
 import NotFound from "./components/NotFound";
 import Message from "./components/Message";
 import Login from "./components/Login";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
 import "./App.css";
+
 
 const App = (props) => {
   const [posts, setPosts] = useStorageState(localStorage, `state-posts`, []);
@@ -23,6 +27,15 @@ const App = (props) => {
 
   const getNewSlugFromTitle = (title) =>
     encodeURIComponent(title.toLowerCase().split(" ").join("-"));
+
+  //for login In, using fireBase.
+  const onLogin = (email, password) => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(user => console.log("logged in!"))
+      .catch(error => console.error(error));
+  };
 
   // CRUD functions
   const addNewPost = (post) => {
@@ -77,7 +90,7 @@ const App = (props) => {
           <Route
             exact
             path="/login"
-            component={Login}
+            render={() => <Login onLogin={onLogin} />}
           />
           <Route
             exact
