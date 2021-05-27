@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const Login = (props) => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log(email, password)
+    onLogin(email, password);
   };
 
   return (
