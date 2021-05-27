@@ -7,6 +7,7 @@ import Post from "./components/Post";
 import PostForm from "./components/PostForm";
 import NotFound from "./components/NotFound";
 import Message from "./components/Message";
+import Login from "./components/Login";
 import "./App.css";
 
 const App = (props) => {
@@ -72,6 +73,11 @@ const App = (props) => {
                 return <Redirect to="/" />;
               }
             }}
+          />
+          <Route
+            exact
+            path="/Login"
+            component={Login}
           />
           <Route
             exact
