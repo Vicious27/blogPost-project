@@ -68,9 +68,11 @@
     padding: 0;  
   }
 
+/* changes main posts in skate-logs*/
   .App article.posts-container {
     display: flex;
     flex-direction: column;
+    background: #2b152cee;
   }
 
 /* changes the uls under post */
@@ -117,6 +119,13 @@
   padding: 2rem;
   background: rgb(97, 113, 134);
 }
+
+/* changes login form*/
+  .App form.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .App form input {
     border: 1px solid #ccc;
