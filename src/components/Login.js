@@ -22,7 +22,7 @@ const Login = ({ onLogin }) => {
       <p>
         <button type="submit" disabled={!email && !password}>
           Login
-      </button>
+        </button>
       </p>
     </form>
   );
