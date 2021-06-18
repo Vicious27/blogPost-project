@@ -22,8 +22,8 @@
   }
 
   .App .container {
-    max-width: 800px;
-    margin: 0 auto;   
+    max-width: 550px;
+    margin: 0 auto;
   }
 
   /*targets App-header*/
@@ -136,6 +136,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 550px;
+    margin: auto;
+    margin-top: 7em;
+  }
+
+  /* changes the create post container*/
+  .App form.container {
+   margin-top: 6em;
   }
 
   .App form input {
@@ -174,7 +182,8 @@
   border: none;
   font-size: inherit;
   color: #26738D;
-  text-decoration: underline;  
+  text-decoration: none;
+  background-color: rgba(245, 245, 245, 0) ;  
 }
 
   .App button.linkLike:hover {
