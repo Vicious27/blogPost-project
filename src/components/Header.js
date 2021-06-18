@@ -2,23 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Header = (props) => {
-
-  return (
-    <header className="App-header">
-      <ul className="container">
-        <li key="home">
-          <Link to="/">Skate-Logs</Link>
-        </li>
-        <li>
-          <Link to="/new">Create Post</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-      </ul>
-    </header>
-  )
-};
+const Header = (props) => (
+  <header className="App-header">
+    <ul className="container">
+      <li>
+        <Link to="/">Memoirs</Link>
+      </li>
+      <li>
+        <Link to="/new">New Post</Link>
+      </li>
+    </ul>
+  </header>
+);
 
 export default Header;

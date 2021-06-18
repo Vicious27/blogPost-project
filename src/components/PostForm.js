@@ -44,7 +44,7 @@ const PostForm = ({ post: propsPost, addNewPost, updatePost }) => {
   return (
     <form className="container"
       onSubmit={handlePostForm}>
-      <h1>Log-Sesh</h1>
+      <h1>Create post</h1>
       <p>
         <label htmlFor="form-title">Title:</label>
         <input

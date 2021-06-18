@@ -7,14 +7,14 @@ const Post = ({ post }) => {
     {}
   );
 
-  const contentHtml = converter.convert();
+  const contentHTML = converter.convert();
 
   return (
     <article className="post-container">
       <h1>{post.title}</h1>
       <div
         className="content"
-        dangerouslySetInnerHTML={{ __html: contentHtml }}
+        dangerouslySetInnerHTML={{ __html: contentHTML }}
       />
     </article>
   );

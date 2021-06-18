@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import { useStorageState } from 'react-storage-hooks';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import UserContext from "./context/UserContext";
+
 import Header from "./components/Header";
 import Posts from "./components/Posts";
 import Post from "./components/Post";
 import PostForm from "./components/PostForm";
 import NotFound from "./components/NotFound";
 import Message from "./components/Message";
-import Login from "./components/Login";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+
 import "./App.css";
 
 
 const App = (props) => {
   const [posts, setPosts] = useStorageState(localStorage, `state-posts`, []);
   const [message, setMessage] = useState(null);
-  const [user, setUser] = useStorageState(localStorage, "state-user", {});
 
   const setFlashMessage = (message) => {
     setMessage(message)
@@ -31,18 +27,7 @@ const App = (props) => {
     encodeURIComponent(title.toLowerCase().split(" ").join("-"));
 
   //for login In, using fireBase.
-  const onLogin = (email, password) => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((response) => {
-        setUser({
-          email: response.user["email"],
-          isAuthenticated: true,
-        });
-      })
-      .catch((error) => console.error(error));
-  };
+
 
   // CRUD functions
   const addNewPost = (post) => {
@@ -72,59 +57,52 @@ const App = (props) => {
 
   return (
     <Router>
-      <UserContext.Provider value={{ user, onLogin }}>
-        <div className="App">
-          <Header />
-          {message && <Message type={message} />}
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => <Posts posts={posts}
-                deletePost={deletePost} />}
-            />
-            <Route
-              path="/post/:postSlug"
-              render={(props) => {
-                const post = posts.find((post) =>
-                  post.slug === props.match.params.postSlug);
-                if (post) {
-                  return <Post post={post} />;
-                } else {
-                  return <Redirect to="/" />;
-                }
-              }}
-            />
-            <Route
-              exact
-              path="/login"
-              render={() => <Login onLogin={onLogin} />}
-            />
-            <Route
-              exact
-              path="/new"
-              render={() => (
-                <PostForm
-                  addNewPost={addNewPost}
-                  post={{ id: 0, slug: "", title: "", content: "" }} />
-              )}
-            />
-            <Route
-              path="/edit/:postSlug"
-              render={(props) => {
-                const post = posts.find((post) =>
-                  post.slug === props.match.params.postSlug);
-                if (post) {
-                  return <PostForm updatePost={updatePost} post={post} />
-                } else {
-                  return <Redirect to="/" />;
-                }
-              }}
-            />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-      </UserContext.Provider>
+      <div className="App">
+        <Header />
+        {message && <Message type={message} />}
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Posts posts={posts}
+              deletePost={deletePost} />}
+          />
+          <Route
+            path="/post/:postSlug"
+            render={(props) => {
+              const post = posts.find((post) =>
+                post.slug === props.match.params.postSlug);
+              if (post) {
+                return <Post post={post} />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          />
+          <Route
+            exact
+            path="/new"
+            render={() => (
+              <PostForm
+                addNewPost={addNewPost}
+                post={{ id: 0, slug: "", title: "", content: "" }} />
+            )}
+          />
+          <Route
+            path="/edit/:postSlug"
+            render={(props) => {
+              const post = posts.find((post) =>
+                post.slug === props.match.params.postSlug);
+              if (post) {
+                return <PostForm updatePost={updatePost} post={post} />
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </Router>
   );
 };
