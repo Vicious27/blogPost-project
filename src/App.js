@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useStorageState } from 'react-storage-hooks';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import firebase from "./firebase";
+
 import Login from "./components/Login";
 import Header from "./components/Header";
 import Posts from "./components/Posts";
@@ -27,7 +29,14 @@ const App = (props) => {
     encodeURIComponent(title.toLowerCase().split(" ").join("-"));
 
   //for login In, using fireBase.
-
+  const onLogin = (email, password) => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(user => console.log("logged in")
+        .catch(error => console.error(error))
+      )
+  }
 
   // CRUD functions
   const addNewPost = (post) => {
@@ -82,7 +91,9 @@ const App = (props) => {
           <Route
             exact
             path="/login"
-            component={Login}
+            render={() =>
+              <Login onLogin={onLogin} />
+            }
           />
           <Route
             exact
