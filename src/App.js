@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStorageState } from 'react-storage-hooks';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-
+import Login from "./components/Login";
 import Header from "./components/Header";
 import Posts from "./components/Posts";
 import Post from "./components/Post";
@@ -78,6 +78,11 @@ const App = (props) => {
                 return <Redirect to="/" />;
               }
             }}
+          />
+          <Route
+            exact
+            path="/login"
+            component={Login}
           />
           <Route
             exact

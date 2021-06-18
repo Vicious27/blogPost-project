@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-const Login = ({ onLogin }) => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
-    onLogin(email, password);
+    console.log(email, password);
   };
 
   return (
-    <form className="login" name="login" onSubmit={handleLogin}>
+    <form className="container" name="login" onSubmit={handleLogin}>
       <p>
         <label htmlFor="email">Email:</label>
         <input type="email" onChange={(event) => setEmail(event.target.value)} />
