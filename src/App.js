@@ -30,7 +30,7 @@ const App = (props) => {
   const getNewSlugFromTitle = (title) =>
     encodeURIComponent(title.toLowerCase().split(" ").join("-"));
 
-  //for login In, using fireBase.
+  //for loginIn, using fireBase.
   const onLogin = (email, password) => {
     firebase
       .auth()
@@ -40,6 +40,17 @@ const App = (props) => {
           email: response.user["email"],
           isAuthenticated: true,
         });
+      })
+      .catch((error) => console.error(error));
+  }
+
+  //for loginout, using firebase
+  const onLogout = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser({ isAuthenticated: false });
       })
       .catch((error) => console.error(error));
   }
@@ -72,7 +83,7 @@ const App = (props) => {
 
   return (
     <Router>
-      <UserContext.Provider value={{ user, onLogin }}>
+      <UserContext.Provider value={{ user, onLogin, onLogout }}>
         <div className="App">
           <Header />
           {message && <Message type={message} />}
