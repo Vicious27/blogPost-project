@@ -120,7 +120,7 @@ const App = (props) => {
                 user.isAuthenticated ? (
                   <PostForm
                     addNewPost={addNewPost}
-                    post={{ id: 0, slug: "", title: "", content: "" }} />
+                    post={{ key: null, slug: "", title: "", content: "" }} />
                 ) : (
                   <Redirect to="/login" />
                 )
