@@ -57,9 +57,10 @@ const App = (props) => {
 
   // CRUD functions
   const addNewPost = (post) => {
-    post.id = posts.length + 1;
+    const postsRef = firebase.database().ref("posts");
     post.slug = getNewSlugFromTitle(post.title);
-    setPosts([...posts, post]);
+    delete post.key;
+    postsRef.push(post);
     setFlashMessage(`saved`);
   };
 
