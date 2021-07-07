@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStorageState } from 'react-storage-hooks';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import firebase from "./firebase";
@@ -80,6 +80,24 @@ const App = (props) => {
       setFlashMessage(`deleted`);
     }
   };
+
+  //ComponentDidMount
+  useEffect(() => {
+    const postsRef = firebase.database().ref("posts");
+    postsRef.on("value", (snapshot) => {
+      const posts = snapshot.val();
+      const newStatePosts = [];
+      for (let post in posts) {
+        newStatePosts.push({
+          key: post,
+          slug: posts[post].slug,
+          title: posts[post].title,
+          content: posts[post].content,
+        })
+      }
+      setPosts(newStatePosts);
+    });
+  }, [setPosts]);
 
 
   return (
