@@ -65,13 +65,14 @@ const App = (props) => {
   };
 
   const updatePost = (post) => {
-    post.slug = getNewSlugFromTitle(post.title);
-    const index = posts.findIndex((p) => p.id === post.id);
-    const oldPosts = posts.slice(0, index).concat(posts.slice(index + 1));
-    const updatedPosts = [...oldPosts, post].sort((a, b) => a.id - b.id);
-    setPosts(updatedPosts);
+    const postRef = firebase.database().ref("posts/" + post.key);
+    postRef.update({
+      slug: getNewSlugFromTitle(post.title),
+      title: post.title,
+      content: post.content,
+    });
     setFlashMessage(`updated`);
-  }
+  };
 
   const deletePost = (post) => {
     if (window.confirm("Delete this post?")) {
@@ -81,7 +82,7 @@ const App = (props) => {
     }
   };
 
-  //ComponentDidMount
+  //react lifecycle hook
   useEffect(() => {
     const postsRef = firebase.database().ref("posts");
     postsRef.on("value", (snapshot) => {
