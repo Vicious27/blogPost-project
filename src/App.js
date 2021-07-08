@@ -76,8 +76,8 @@ const App = (props) => {
 
   const deletePost = (post) => {
     if (window.confirm("Delete this post?")) {
-      const updatedPosts = posts.filter((p) => p.id !== post.id);
-      setPosts(updatedPosts);
+      const postRef = firebase.database().ref("posts/" + post.key);
+      postRef.remove();
       setFlashMessage(`deleted`);
     }
   };
