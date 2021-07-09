@@ -94,6 +94,10 @@
     padding: .8rem;
   }
 
+  .App article li h2 {
+    text-decoration: underline overline 1px rgba(202, 19, 80, 0.945);
+  }
+
 /* styles the delete and edit button */
   #crud-buttons {
     margin-top: .5rem ;

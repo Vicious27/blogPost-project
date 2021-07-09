@@ -10,7 +10,7 @@ const Header = (props) => {
     <header className="App-header">
       <ul className="container">
         <li>
-          <Link to="/">Memoirs</Link>
+          <Link to="/">My Blogs</Link>
         </li>
         {user.isAuthenticated ? (
           <>
