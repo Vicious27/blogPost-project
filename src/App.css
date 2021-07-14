@@ -44,7 +44,7 @@
     font-weight: normal;
     text-decoration: none;
   }
-  .App-header ul {    
+  .App-header ul {
     padding: 0;
   }
   
@@ -166,6 +166,7 @@
   .App form input {
     border: 1px solid #ccc;
     padding: .3rem;
+    width: 100%;
   }
 
   .App form label {
