@@ -8,7 +8,7 @@ const Posts = ({ posts, deletePost }) => {
 
   return (
     <article className="posts-container">
-      <h1>Posts</h1>
+      <h1>Recent Articles</h1>
       <ul>
         {posts.lenght < 1 && <li key="empty">
           No posts yet!</li>}
