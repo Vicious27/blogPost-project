@@ -22,15 +22,11 @@
     color: #353944;
   }
 
-  .App .container {
-    max-width: 550px;
-    margin: 0 auto;
-  }
-
   /*targets App-header*/
   .App .App-header {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background: rgba(20, 16, 16, 0.925);
+    text-align: end;
   }
 
 .App-header {
