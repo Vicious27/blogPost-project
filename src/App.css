@@ -70,8 +70,7 @@
     display: flex;
     flex-direction: column;
     background: #2b152cee;
-    position: absolute;
-    height: 100%;
+    min-height: 587px;
     width: 100%;
   }
 /* change single post view container*/
@@ -92,7 +91,7 @@
     border: rgba(255, 235, 205, 0.938) solid 2px;
     margin: 20px;
     width: 600px;
-    height: 100px;
+    min-height: 100px;
     text-align: left;
     box-shadow: 6px 6px 6px 5px rgba(8, 8, 8, 0.952);
     border-radius: .3rem;
@@ -145,17 +144,16 @@
  .App form {
   padding: 2rem;
   background: rgb(97, 113, 134);
-  width: 550px;
-  height: 350px;
   margin: auto;
 }
+/*these are colors to make forms invis rgba(32, 33, 34, 0.1)*/
 
 /* changes login form*/
   .App form.login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 550px;
+    width: 500px;
     margin: auto;
     margin-top: 7em;
   }
@@ -163,6 +161,12 @@
   /* changes the create post container*/
   .App form.container {
    margin-top: 6em;
+   width: 550px;
+  }
+
+  .App {
+    background-color: rgba(19, 16, 16, 0.945);
+    min-height: 587px;
   }
 
   .App form input {
