@@ -3,7 +3,6 @@
    box-sizing: border-box;
    margin: 0;
    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   overflow: hidden;
  }
  
  .App a {
@@ -74,6 +73,7 @@
     background: #2b152cee;
     min-height: 587px;
     width: 100%;
+    overflow: hidden;
   }
 /* change single post view container*/
   .App article.post-container {
