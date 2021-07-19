@@ -173,7 +173,7 @@
 
   /* changes the create post container*/
   .App form.container {
-   margin-top: 6em;
+   margin-top: 4em;
    width: 550px;
   }
 
@@ -200,6 +200,7 @@
 
   .App form .ql-editor {
     min-height: 4rem;
+    height: 10em;
   }
   
   .App form button[type="submit"] {
