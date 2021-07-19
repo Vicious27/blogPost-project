@@ -95,6 +95,10 @@
     letter-spacing: 0.02em;
   }
 
+  .post-container h1 {
+    line-height: 1.5em;
+  }
+
   .post-container p {
     width: 65ch;
   }
