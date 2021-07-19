@@ -3,6 +3,7 @@
    box-sizing: border-box;
    margin: 0;
    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   overflow: hidden;
  }
  
  .App a {
@@ -193,7 +194,7 @@
   }
 
   .App form input#form-title {
-    min-width: calc(100% - 20px);
+    width: 30em;
     padding: 10px;
     font-size: 1rem;
   }
